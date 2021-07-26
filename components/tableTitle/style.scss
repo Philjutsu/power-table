@@ -1,0 +1,36 @@
+.tableTitle {
+    display:flex;
+    font-size:2em;
+    margin-bottom:10px;
+    line-height: 1;
+    align-items: flex-end;
+    
+    .title {
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #333;
+        margin:0;
+    }
+
+    .dividerColon {
+        margin:0 10px;
+    }
+}
+
+.recordCount {
+    margin: 0 20px 0 0;
+    color:#333;
+    display: flex;
+    align-items: flex-end;
+    font-size: .8em;
+}
+.initialCount {
+    font-size: .8em;
+}
+.number {
+    font-weight: bold;
+}
+.label {
+    margin-left:3px;
+    font-size:.8em;
+}

@@ -1,0 +1,73 @@
+@use '../../scss/variables.scss' as *;
+
+.pagination {
+    display: block;
+    color:#000;
+    display:flex;
+    background: $buttonBgDefault;
+    border-radius: $borderRadius;
+}
+.superPage {
+    display:flex;
+    justify-content: center;
+}
+.pagiBtn {
+    flex: 0 1 auto;
+    padding: 5px 1em;
+    border-right:1px solid #CCC;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    cursor:pointer;
+    font-size: 1em;
+
+    @media (max-width: $mediaMid) {
+        & {
+             padding: 5px;
+        }
+    }
+}
+.line {
+    width:100%;
+    height: 2px;
+    margin-bottom:1px;
+    background: turquoise;
+    transition: .3s all ease-in-out;
+
+    &.selectedRow {
+        background:coral;
+    }
+}
+
+.selectedGroup {
+    .line {
+        margin-bottom:2px;
+        height: 3px;
+    }
+}
+
+.pageCount {
+
+}
+.pageSelectionInput {
+    display:none;
+}
+.number {
+    font-weight: bold;
+    font-size:1.3em;
+    display:inline-block;
+}
+.records {
+    display:inline-block;
+}
+.currentPage {
+    font-size:1.3em;
+}
+.pages {
+    font-size:1em;
+}
+.divider {
+    margin:0 1px;
+    font-size:1.2em;
+    display:inline-block;
+}

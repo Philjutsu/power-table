@@ -1,0 +1,31 @@
+@use '../../scss/variables.scss' as *;
+
+.search {
+    width:25%;
+	padding:0;
+    align-self: center;
+
+    label {
+        display:none;
+    }
+
+    input {
+        background: transparent;
+        border: none;
+        outline: none;
+        width: 100%;
+        color: #FFF;
+        border-bottom: 1px solid #888;
+
+        &::placeholder {
+            color:rgb(235, 235, 235);
+            font-style: italic;
+        }
+    }
+
+    @media (max-width: $mediaMid) {
+        & {
+            width:100%;
+        }
+    }
+}

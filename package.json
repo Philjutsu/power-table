@@ -1,0 +1,43 @@
+{
+    "name": "power-table",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "parcel index.html --port 4444 --open"
+    },
+    "keywords": [],
+    "author": "Philip Hesslup",
+    "license": "ISC",
+    "dependencies": {
+        "classnames": "^2.2.6",
+        "gsap": "^3.6.1",
+        "lodash": "^4.17.21",
+        "parcel": "1.12.3",
+        "postcss": "^8.3.0",
+        "react": "^16.14.0",
+        "react-dom": "^16.14.0",
+        "react-router-dom": "^5.2.0",
+        "react-string-replace": "^0.4.4",
+        "react-transition-group": "^4.4.1",
+        "recompose": "^0.30.0",
+        "uuid": "^8.3.0"
+    },
+    "devDependencies": {
+        "caniuse-lite": "^1.0.30001154",
+        "postcss-cssnext": "^3.1.0",
+        "postcss-global-theme": "^1.1.0",
+        "postcss-import": "^12.0.1",
+        "postcss-modules": "^3.2.2",
+        "precss": "^4.0.0",
+        "sass": "^1.32.0"
+    },
+    "browserslist": [
+        "last 3 and_chr versions",
+        "last 3 chrome versions",
+        "last 3 opera versions",
+        "last 3 ios_saf versions",
+        "last 3 safari versions"
+    ]
+}

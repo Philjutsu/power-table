@@ -1,0 +1,12 @@
+@use './variables.scss';
+
+@mixin buttonPrimary() {
+    background: $buttonBgDefault;
+    color: $buttonColorDefault;
+    border-radius: $borderRadius;
+}
+
+@mixin offPage {
+    position:absolute;
+    left:-999em;
+}

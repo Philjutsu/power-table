@@ -1,0 +1,28 @@
+@use '../../scss/variables.scss' as *;
+
+.tableChrome {
+	display:flex;
+	align-items: center;
+	background: #383838;
+    width:100%;
+    padding: 5px 10px;
+    box-sizing: border-box;
+
+    & > * {
+        margin:0 10px;
+
+        &:first-child {
+            margin:0;
+        }
+         &:last-child {
+             margin:0 0 0 auto;
+         }
+    }
+
+    @media (max-width: $mediaMid) {
+        & {
+            padding: 1em 1em;
+            flex-wrap: wrap;
+        }
+    }
+}

@@ -1,0 +1,33 @@
+
+@use '../../../scss/variables.scss' as *;
+
+$tableItemMarginTop: 0;
+
+$defaultBG: #dcdcdc;
+
+$tableItemBgColors: (
+  default: $defaultBG,
+  alt: lighten($defaultBG, 5%),
+  rowHover: lighten($defaultBG, 50%),
+  rowSelected: $highlightBg,
+  rowSelectedAlt: lighten($highlightBg, 3%),
+  rowHoverSelected: lighten($highlightBg, 8%),
+  columnHeading: darken($defaultBG, 5%),
+  columnHover: lighten($defaultBG, 15%),
+  columnHoverAlt: lighten($defaultBG, 8%),
+  columnSelectedHeading: darken($highlightBg, 50%),
+  columnSelected: $highlightBg,
+  columnSelectedAlt: lighten($highlightBg, 8%),
+  columnHoverSelected: lighten($highlightBg, 12%),
+  columnSelectedHeadingHover: darken($highlightBg, 40%),
+);
+
+$searchHighlightColors: (
+  mainSearch: #0FF,
+  columnSearch: #0070ff,
+  mainAndColumnSearch: lighten($defaultBG, 50%),
+);
+
+$speedOut: .5s;
+$speed: .3s;
+$ease: ease;

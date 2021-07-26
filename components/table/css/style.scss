@@ -1,0 +1,126 @@
+@use '../../../scss/main.scss' as *;
+@use './tableItem.scss' as *;
+@use './columnHeading.scss' as *;
+@use './config.scss' as *;
+
+.box {
+    height:100px;
+    width:100px;
+    background:#0FF;
+}
+
+%tableHeading {
+	text-transform: uppercase;
+}
+.table {
+    flex:1 1 auto;
+}
+.headingContainer {
+    position: relative;
+}
+
+.tableChrome {
+	display:flex;
+	align-items: center;
+	background: #383838;
+    padding: 5px 10px;
+}
+
+.rows {
+    width:100%;
+    position: relative;
+    z-index: 100;
+}
+.rowGroup {
+    .tableRow:last-child { border-bottom:none; }
+}
+
+.tableRow {
+	display: flex;
+	align-items: center;
+	position: relative;
+    align-items: stretch;
+    z-index: 1;
+    transition: $speedOut z-index;
+    
+    @media (min-width: $mediaMid) {
+        &:hover {
+            &:not(.titleRow) {
+                @include tableRowHover();
+                z-index: 50;
+                transition:0s z-index;
+            }
+        }
+    }
+
+    &:nth-child(even) {
+        .tableItem:not(.columnHighlighted) {
+            .container {
+                background: map-get($tableItemBgColors, alt);
+            }
+        }
+        .tableItem.columnSelected .container {
+            background: map-get($tableItemBgColors, columnSelectedAlt);
+        }
+        .tableItem.rowSelected .container {
+            background: map-get($tableItemBgColors, rowSelectedAlt);
+        }
+    }    
+    
+
+    @media (max-width: $mediaMid) {
+        & {
+            flex-direction: column;
+            padding:0 0 10px;
+        }
+    }
+}
+
+.titleRow {
+    @extend %tableHeading;
+    font-weight: bold;
+
+    .tableItem .container {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    @media (max-width: $mediaMid) {
+        & {
+            display:none;
+        }
+    }
+}
+
+.tableItem {
+    @extend %tableItem;
+    @extend %tableItemContainerColors;
+}
+
+.searchQueryHighlight {
+    background:map-get($searchHighlightColors, mainSearch);
+    
+    .columnQueryHighlight {
+    }
+}
+.columnQueryHighlight {
+    color:map-get($searchHighlightColors, columnSearch);
+    font-weight: bold;
+}
+
+.noResults {
+	display:block;
+	text-align:center;
+	padding:5% 0;
+	font-size:2em;
+	color: v-red;
+}
+.sad {
+	transform: rotate(90deg);
+    display: inline-block;
+    font-size: 1.5em;
+    padding: 10px 20px;
+    border-radius: 50%;
+    border: 5px solid;
+    margin: 10px;
+}

@@ -1,0 +1,18 @@
+@use '../../scss/variables.scss' as *;
+
+.pageSize {
+	background:$buttonBgDefault;
+    padding: 5px 1em;
+    display: inline-block;
+    border: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: $borderRadius;
+    margin-left: 10px;
+}
+.pageSize:focus, .pageSize:hover {
+	background: $highlightBg;
+    color: #FFF;
+    outline: none;
+}

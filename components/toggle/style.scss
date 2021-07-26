@@ -1,0 +1,160 @@
+$margin: 3;
+$barWidth: 5;
+$smallBar: 3;
+
+$checkedColor: #a5ccf8;
+$unCheckedColor: rgb(235, 235, 235);
+
+.container {
+    align-items: center;
+    display: flex;
+    transition: .3s fill ease-in;
+
+    .bar {
+        fill:$unCheckedColor;
+    }
+
+    .disabled {
+        .bar {
+            fill: rgb(173, 173, 173) !important;
+        }
+    }
+}
+.radioButton {
+    align-items: flex-start;
+    display: flex;
+    box-sizing: border-box;
+    cursor:pointer;    
+
+    &.disabled {
+        cursor: default;
+    }
+}
+
+.radioInput {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: -99em;
+}
+.count {
+    display: block;
+    background: #4789d4;
+    color: #FFF;
+    padding: 3px 8px;
+    border-radius: 15px;
+    margin-left: 5px;
+    position: relative;
+    top: -5px;
+    left: -5px;
+    font-size: 1em;
+    transform:scale(0);
+
+    &.disabled {
+        opacity: 0;
+    }
+}
+.clear {
+    font-size:1.5em;
+    margin-right:5px;
+}
+.toggleBtn {
+    width:20px;
+    height:20px;
+
+    .bar {
+
+    }
+}
+
+.row {
+    margin:0 3px;
+
+    rect {
+        fill: $unCheckedColor;
+        height: $barWidth;
+        width:100%;
+        
+        &:nth-child(1) { y:0; }
+        &:nth-child(2) { y:$barWidth + $margin; }
+        &:nth-child(3) { y:($barWidth + $margin) * 2; }
+    }
+
+    
+    &.show-all.checked rect {
+        fill: $checkedColor;
+    }
+    &.show-selected {
+        rect {
+            height: $smallBar;
+
+            &:first-child {
+                y:2;
+            }
+            &:nth-child(2) {
+                height: $barWidth;
+                y: 8;
+            }
+            &:last-child {
+                y:($barWidth + $margin) * 2;
+            }
+        }
+
+        &.checked rect:nth-child(2) { fill: $checkedColor; }
+    }
+    &.hide-selected {
+        rect {
+            height: $smallBar;
+            &:nth-child(odd) {
+                height: $barWidth;
+            }
+            &:nth-child(2) {
+                y: 9;
+            }
+        }
+         &.checked rect:nth-child(odd){ fill: $checkedColor; }
+    }
+}
+
+.column {
+    margin:0 3px;
+    rect {
+        fill: #333;
+        width: $barWidth;
+        height: 100%;
+
+        &:nth-child(1) { x:0; }
+        &:nth-child(2) { x:7; }
+        &:nth-child(3) { x:14; }
+    }
+
+     &.show-all.checked rect {
+        fill: $checkedColor;
+    }
+    &.show-selected {
+        rect {
+            width: $smallBar;
+            &:nth-child(2) {
+                width: $barWidth;
+                x:6;
+            
+            }
+            &:last-child {
+            }
+        }
+        &.checked rect:nth-child(2) { fill: $checkedColor; }
+    }
+    &.hide-selected {
+        rect {
+            width: $smallBar;
+            &:nth-child(odd) {
+                width: $barWidth;
+            }
+            &:nth-child(2) {
+                x:8;
+            }
+        }
+         &.checked rect:nth-child(odd){ fill: $checkedColor; }
+    }
+}

@@ -1,0 +1,65 @@
+@use './config.scss' as *;
+
+@mixin levelZero() {
+    .container {
+        z-index: 2;
+        transition:
+            $speedOut transform $ease,
+            $speedOut top $ease,
+            $speed border-radius $ease,
+            $speedOut z-index,
+            $speedOut background-color $ease;
+
+    }
+    .shadow {
+        bottom: 2px;
+        z-index: 1;
+        transition:
+            $speed bottom $ease,
+            $speed opacity $ease,
+            $speed width $ease,
+            $speed filter $ease;
+        opacity: 0;
+        filter: blur(0);
+        
+    }
+}
+@mixin levelOne() {
+    z-index:25;
+    .container {
+        transform:scale(1.03);
+        top: -2px;
+        transition:
+            $speed transform $ease,
+            $speed top $ease,
+            $speed border-radius $ease,
+            $speed background-color $ease;
+    }
+    .shadow {
+        bottom: -8px;
+        opacity: .1;
+        filter: blur(2px);
+        width:calc(100% + 1px);
+    }
+
+}
+@mixin levelTwo() {
+    z-index:50;
+    .container {
+        transform:scale(1.06);
+        top: -2px;
+        transition:
+            $speed transform $ease,
+            $speed top $ease,
+            $speed border-radius $ease,
+            $speed background-color $ease;
+
+    }
+    .shadow {
+        bottom: -10px;
+        opacity: .1;
+        filter: blur(3px);
+        width:calc(100% + 1px);
+        
+    }
+}
