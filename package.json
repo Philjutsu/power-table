@@ -7,7 +7,7 @@
         "start": "parcel index.html",
         "dev": "parcel index.html --port 4444 --open",
         "heroku-postbuild": "parcel build src/index.html",
-        "build": "parcel build src/index.html"
+        "build": "parcel build index.html"
     },
     "keywords": [],
     "author": "Philip Hesslup",
