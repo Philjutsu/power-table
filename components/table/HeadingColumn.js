@@ -34,6 +34,9 @@ const HeadingColumn = ({ children, column, columnHighlight, dispatch, hasColumnQ
             isColumnHeader
             hoverFunction={handleHover}
         >
+            
+            <div className={classNames(style.columnDragHandle, 'dragHandle')}></div>
+            
             <div className={style.text}>
                 <span onClick={handleClick}>
                     {column.heading.display}
@@ -47,6 +50,7 @@ const HeadingColumn = ({ children, column, columnHighlight, dispatch, hasColumnQ
                 onFocus={e => columnHighlight(column.id, true)}
                 onBlur={e => columnHighlight(column.id, false)}
                 ref={inputRef}
+                aria-label={`Search ${column.heading.display} column`}
             />
         </TableItem>
     )

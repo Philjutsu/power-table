@@ -16,7 +16,7 @@ const RowGroup = ({ rows, dispatch, columns, searchQuery }) => {
     }, []);
     
     return (
-        <div className={style.rowGroup} ref={container}>
+        <div className={classNames(style.rowGroup, 'rowGroup')} ref={container}>
             {rows.map((row, rowIdx) => 
                 <Row
                     key={row.id}
@@ -28,6 +28,7 @@ const RowGroup = ({ rows, dispatch, columns, searchQuery }) => {
                 >
                     {columns.map((column) => {
                         const content = row.data[column.heading.value];
+
                         return (
                             <TableItem
                                 key={row.id + uuid()}

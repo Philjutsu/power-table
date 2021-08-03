@@ -1,6 +1,10 @@
 // Media
 $mediaMid : 970px;
 
+:export {
+  mediaMid: $mediaMid;
+}
+
 // Sizes
 $fontSize: 10px;
 $borderRadius: 3px;

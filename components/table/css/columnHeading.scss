@@ -14,7 +14,7 @@
     }
     
     .container {
-        background: #8e8e8e;
+        background: #636363;
         color: #ffffff;
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
@@ -25,9 +25,8 @@
         @extend .withQuery;
 
         .columnDragHandle {
-            top: -5px;
+            top: -$tableItemPaddingTop - 5px;
             height:10px;
-            display: block;
             transition: .3s all ease;
         }
     }
@@ -59,7 +58,7 @@
     width:30%;
     margin:0 auto;
     position: absolute;
-    top: 0;
+    top: -$tableItemPaddingTop;
     left: 0;
     right: 0;
     transition: .3s all ease;
@@ -91,5 +90,9 @@
     transition:
         .3s opacity ease,
         .3s bottom ease;
+
+    &:focus {
+            border-color: map-get($searchHighlightColors, columnSearch);
+    }
   
 }

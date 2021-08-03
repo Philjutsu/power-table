@@ -37,7 +37,8 @@ const data = [
         id: 'RE4-2004-DSO-SNR-USSS',
         orderNumber: 'OR473698',
         orderDate: '7/24/1998',
-        status: 'Pending'
+        status: 'Pending',
+        email: 'kennedy.leon@secret.service.gov'
     },
     {
         firstName: 'Chris',
@@ -46,7 +47,7 @@ const data = [
         orderNumber: 'OR098765',
         orderDate: '10/17/2009',
         status: 'Lost',
-        infected: 'Yes'
+        email: 'thechrisredfield@bsaa.org'
     },
     {
         firstName: 'Sherry',
@@ -55,16 +56,7 @@ const data = [
         orderNumber: 'OR565656',
         orderDate: '12/21/2012',
         status: 'Complete',
-        infected: 'Yes'
-    },
-    {
-        firstName: 'Zombie',
-        lastName: 'T-Type',
-        id: 'errrrrrrrrrrrrruhhhhhhhhnnnnnngggggggalllleeeelalal',
-        orderNumber: 'OR111111',
-        orderDate: '7/24/1998',
-        status: '???',
-        infected: 'Yes'
+        email: 'sherryb@umbrella.com'
     },
     {
         firstName: 'Parker',
@@ -81,6 +73,14 @@ const data = [
         orderNumber: 'OR345345',
         orderDate: '5/24/2011',
         status: 'Pending'
+    },
+    {
+        firstName: 'Ethan',
+        lastName: 'Winters',
+        id: 'RE7-2017-SE-MOLD',
+        orderNumber: 'OR980344',
+        orderDate: '2/17/2021',
+        status: 'Cancelled'
     }
 ]
 export default data;

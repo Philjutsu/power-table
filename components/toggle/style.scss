@@ -4,6 +4,7 @@ $smallBar: 3;
 
 $checkedColor: #a5ccf8;
 $unCheckedColor: rgb(235, 235, 235);
+$disabledColor: rgb(173, 173, 173);
 
 .container {
     align-items: center;
@@ -16,7 +17,7 @@ $unCheckedColor: rgb(235, 235, 235);
 
     .disabled {
         .bar {
-            fill: rgb(173, 173, 173) !important;
+            fill: $disabledColor !important;
         }
     }
 }
@@ -24,9 +25,11 @@ $unCheckedColor: rgb(235, 235, 235);
     align-items: flex-start;
     display: flex;
     box-sizing: border-box;
-    cursor:pointer;    
 
-    &.disabled {
+    .toggleBtn {
+        cursor:pointer;
+    }
+    &.disabled .toggleBtn {
         cursor: default;
     }
 }
@@ -58,14 +61,16 @@ $unCheckedColor: rgb(235, 235, 235);
 .clear {
     font-size:1.5em;
     margin-right:5px;
+    cursor:pointer;
+
+    &.disabled {
+        color: $disabledColor;
+        cursor: default;
+    }
 }
 .toggleBtn {
     width:20px;
     height:20px;
-
-    .bar {
-
-    }
 }
 
 .row {

@@ -17,7 +17,7 @@ import { tableReducer, formatData } from '../tableReducer'
 import * as toggleDataConfig from './toggle/config'
 import TableChrome from './tableChrome/TableChrome';
 
-const TableHOC = () => {
+const PowerTable = ({mediaSize}) => {
     const initialData = formatData(data);
     const [state, dispatch] = useReducer(tableReducer, initialData);
 
@@ -137,6 +137,7 @@ const TableHOC = () => {
             <TableTitle title={"Power Table"} initialCount={initialDataTotal} currentTotal={total} />
             <TableChrome>
                 <Search value={searchQuery} queryChange={setSearchQuery} />
+                {mediaSize === 'medium' &&
                 <ToolBar>
                     <ToolBarSection>
                         <ClearColumnQueries dispatch={dispatch} hasColumnQuery={hasColumnQuery} />
@@ -160,6 +161,7 @@ const TableHOC = () => {
                         />
                     </ToolBarSection>
                 </ToolBar>
+                }
                 <ToolBar>
                     <ToolBarSection>
                         <PageSize {...{ changePageSize, pageSize }} />
@@ -179,4 +181,4 @@ const TableHOC = () => {
     )
 }
 
-export default TableHOC;
+export default PowerTable;

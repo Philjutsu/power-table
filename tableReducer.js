@@ -19,8 +19,6 @@ export const formatData = data => {
     let columns = [], rows = [];
 
     data.forEach(row => {
-        const ref = useRef(null);
-
         for (let heading of Object.keys(row)) {
             if (!columns.find(h => h.heading.value == heading)) {
 
@@ -40,7 +38,6 @@ export const formatData = data => {
             id: uuid(),
             data: row,
             selected: false,
-            ref
         })
 
     })
@@ -50,7 +47,6 @@ export const formatData = data => {
 export const tableReducer = (state, action) => {
     const { type, payload } = action
 
-    console.log('ACTION', type);
     switch (type) {
         case actions.SELECT_ROW:
             return ({

@@ -6,8 +6,14 @@ const PageSize = ({changePageSize, pageSize}) => {
 
     return (
         <div>
-            PageSize:
-            <select onChange={changePageSize} value={pageSize} className={style.pageSize}>
+            <label htmlFor={'page-size'}>Page size:</label>
+            <select
+                onChange={changePageSize}
+                value={pageSize}
+                className={style.pageSize}
+                id={'page-size'}
+                aria-label={'Change page size'}
+            >
                 <option value="2">2</option>
                 <option value="4">4</option>
                 <option value="5">5</option>

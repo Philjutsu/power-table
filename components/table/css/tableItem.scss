@@ -43,6 +43,11 @@ $defaultTextColor: #333;
         padding: 1.3em 10px;
         position: relative;
         box-sizing: border-box;
+        border-right:1px solid rgb(187 187 187 / 31%);
+
+        &:last-child {
+            border:none;
+        }
     }
 
     .content {
@@ -65,7 +70,7 @@ $defaultTextColor: #333;
                 display:flex;
                 line-height: 1;
                 align-items: center;
-                padding: .8em 10px;
+                padding: .3em 10px;
             }
         }
     }
@@ -142,6 +147,10 @@ $defaultTextColor: #333;
     .tableItem {
         @include level.levelTwo();
 
+        .container {
+            transform:scale(1.03);
+        }
+
         &:first-child .container {
             border-top-left-radius: $edgeItemRadius;
             border-bottom-left-radius: $edgeItemRadius;
@@ -195,6 +204,14 @@ $defaultTextColor: #333;
         }
     }
 }
+.dragging {
+    @include level.levelThree();
+    
+    .container {
+        background:#0F0;
+    }
+}
+
 
 @keyframes tableItemTitleShow {
     0% {

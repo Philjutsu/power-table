@@ -7,8 +7,8 @@
     @include buttonPrimary();
 
     &.disable {
-        background:rgba(255, 255, 255, 0.288);
-        color:#EEE;
+        background: rgb(158 158 158);
+        color:#FFF;
     }
 
     @media (max-width: $mediaMid) {

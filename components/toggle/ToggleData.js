@@ -12,6 +12,7 @@ const ToggleData = ({ toggle, count, hasSelected, dispatch, displayType }) => {
     const countRef = useRef(null);
     const inputConfig = config.getInputConfig(displayType);
     const [checked, setChecked] = useState(config.values.SHOW_ALL);
+    const clearText = `Clear ${config.getInputString(displayType)} selections`;
 
     const handleToggle = e => {
         if (!hasSelected) return;
@@ -40,7 +41,11 @@ const ToggleData = ({ toggle, count, hasSelected, dispatch, displayType }) => {
 
     return (
         <div className={style.container}>
-            <div className={classNames(style.clear)} onClick={clearSelections}>
+            <div
+                className={classNames(style.clear, {[style.disabled]: !hasSelected })}
+                onClick={clearSelections}
+                title={clearText}
+            >
                 x
             </div>
             <div className={style.radioButton}>

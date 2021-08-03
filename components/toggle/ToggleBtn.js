@@ -3,17 +3,14 @@ import classNames from 'classnames'
 import * as config from './config'
 import style from './style.scss';
 
-const ToggleBtn = ({ handleToggle, hasSelected, name, value, checked, optionStyle, displayType }) => {
+const ToggleBtn = ({ handleToggle, hasSelected, name, value, labelTitle, text, checked, optionStyle, displayType }) => {
     const isChecked = checked === value
     const htmlID = `id-toggle-${displayType}-${name}`
-    const displayTypeString = config.getInputString(displayType);
 
     const cssBooleans = {
         [style.disabled]: !hasSelected,
         [style.checked]: isChecked
     }
-
-    console.log('displayType', displayType, displayTypeString);
 
     return (
         <div className={classNames(style.radioButton, cssBooleans)}>
@@ -28,9 +25,10 @@ const ToggleBtn = ({ handleToggle, hasSelected, name, value, checked, optionStyl
             />
             <label
                 htmlFor={htmlID}
+                title={labelTitle}
             >
                 <svg
-                    className={classNames(style.toggleBtn, { [style.checked]: isChecked }, style[displayTypeString], style[optionStyle])}
+                    className={classNames(style.toggleBtn, { [style.checked]: isChecked }, style[text], style[optionStyle])}
                 >
                     <rect className={style.bar} />
                     <rect className={style.bar} />

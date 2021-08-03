@@ -55,7 +55,7 @@ const TableItem = ({ children, row, column = {}, lastRow, cssClass, rowHovered, 
             onMouseOver={hoverFunction}
             onMouseOut={hoverFunction}
             data-column-id={column.id}
-            title={heading.display}
+            aria-label={heading.display}
         >
             <div className={style.container}>
                 {heading && !isColumnHeader &&

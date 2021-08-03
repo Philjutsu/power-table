@@ -25,23 +25,26 @@ export const getInputConfig = type => {
         {
             value: values.SHOW_ALL,
             name: values.SHOW_ALL,
-            text: `Show all ${text}s`,
+            labelTitle: `Show all ${text}s`,
             optionStyle: 'show-all',
             displayType: type,
+            text
         },
         {
             value: values.SHOW_SELECTED,
             name: values.SHOW_SELECTED,
-            text: `Show selected ${text}s`,
+            labelTitle: `Show selected ${text}s`,
             optionStyle: 'show-selected',
             displayType: type,
+            text
         },
         {
             value: values.HIDE_SELECTED,
             name: values.HIDE_SELECTED,
-            text: `Hide selected ${text}s`,
+            labelTitle: `Hide selected ${text}s`,
             optionStyle: 'hide-selected',
             displayType: type,
+            text
         },
     ])
 }

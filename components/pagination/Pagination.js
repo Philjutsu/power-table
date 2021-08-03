@@ -45,8 +45,8 @@ const Pagination = ({ currentPage, pageCount, total, updatePagination }) => {
 
     return (
         <div className={style.pagination}>
-            <a onClick={first} className={style.pagiBtn}>{`<< `}</a>
-            <a onClick={previous} className={style.pagiBtn}>{'< '}</a>
+            <a onClick={first} className={style.pagiBtn} aria-label={'go to first page'}>{`<< `}</a>
+            <a onClick={previous} className={style.pagiBtn} aria-label={'go to previous page'}>{'< '}</a>
 
             <div  className={style.pagiBtn}>
                 <span className={classNames(style.pageCount)}>
@@ -71,8 +71,8 @@ const Pagination = ({ currentPage, pageCount, total, updatePagination }) => {
                 </span>
             </div>
 
-            <a onClick={next} className={style.pagiBtn}>{' >'}</a>
-            <a onClick={last} className={style.pagiBtn}>{' >>'}</a>
+            <a onClick={next} className={style.pagiBtn} aria-label={'go to next page'}>{' >'}</a>
+            <a onClick={last} className={style.pagiBtn} aria-label={'go to last page'}>{' >>'}</a>
         </div>
     )
 }
