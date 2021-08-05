@@ -7,7 +7,6 @@ import * as config from './config'
 import { actions } from '../../tableReducer'
 import style from './style.scss';
 
-
 const ToggleData = ({ toggle, count, hasSelected, dispatch, displayType }) => {
     const countRef = useRef(null);
     const inputConfig = config.getInputConfig(displayType);

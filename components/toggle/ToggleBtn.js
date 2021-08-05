@@ -1,6 +1,5 @@
 import React from 'react';
 import classNames from 'classnames'
-import * as config from './config'
 import style from './style.scss';
 
 const ToggleBtn = ({ handleToggle, hasSelected, name, value, labelTitle, text, checked, optionStyle, displayType }) => {

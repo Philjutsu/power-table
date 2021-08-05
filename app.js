@@ -8,7 +8,7 @@ const App = () => {
     const matchMedium = window.matchMedia(mediaQueryList.medium.value)
 
     const screenWidthChange = (media) => {
-        if(media.matches) {
+        if (media.matches) {
             setMediaSize('medium')
         } else {
             setMediaSize('small')
@@ -18,6 +18,10 @@ const App = () => {
     useEffect(() => {
         screenWidthChange(matchMedium)
         matchMedium.addEventListener('change', screenWidthChange);
+
+        return () => {
+            matchMedium.removeEventListener('change', screenWidthChange);
+        }
     }, [])
 
     return (

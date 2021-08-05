@@ -118,7 +118,7 @@ $disabledColor: rgb(173, 173, 173);
                 y: 9;
             }
         }
-         &.checked rect:nth-child(odd){ fill: $checkedColor; }
+        &.checked rect:nth-child(odd){ fill: $checkedColor; }
     }
 }
 

@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-
 import style from './style.scss';
 
 const PageSize = ({changePageSize, pageSize}) => {
-
     return (
         <div>
             <label htmlFor={'page-size'}>Page size:</label>

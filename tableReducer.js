@@ -17,7 +17,7 @@ export const headingFormat = text => text
 
 export const formatData = data => {
     let columns = [], rows = [];
-
+    
     data.forEach(row => {
         for (let heading of Object.keys(row)) {
             if (!columns.find(h => h.heading.value == heading)) {
@@ -41,7 +41,12 @@ export const formatData = data => {
         })
 
     })
-    return { rows, columns }
+
+    return {
+        id: uuid(),
+        rows,
+        columns
+    }
 }
 
 export const tableReducer = (state, action) => {

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useReducer } from 'react';
+import React, { useEffect, useState, useReducer, useMemo } from 'react';
 import _ from 'lodash'
 
 import Table from './table/Table'
@@ -15,11 +15,17 @@ import data from '../data';
 
 import { tableReducer, formatData } from '../tableReducer'
 import * as toggleDataConfig from './toggle/config'
-import TableChrome from './tableChrome/TableChrome';
+import TableChrome from './tableChrome/TableChrome'
 
-const PowerTable = ({mediaSize}) => {
+const PowerTable = ({ mediaSize }) => {
     const initialData = formatData(data);
     const [state, dispatch] = useReducer(tableReducer, initialData);
+
+    const [hasSelectedRows, setHasSelectedRows] = useState(false);
+    const [hasSelectedColumns, setHasSelectedColumns] = useState(false);
+    const [selectedRowsCount, setSelectedRowsCount] = useState(0);
+    const [selectedColumnsCount, setSelectedColumnsCount] = useState(0);
+    const [hasColumnQuery, setHasColumnQuery] = useState();
 
     // Search
     const [searchQuery, setSearchQuery] = useState('');
@@ -29,7 +35,6 @@ const PowerTable = ({mediaSize}) => {
     const [total, setTotal] = useState(state.rows.length);
     const [pageSize, setPageSize] = useState(10);
     const [currentPage, setCurrentPage] = useState(1);
-    const [hasColumnQuery, setHasColumnQuery] = useState(false);
     const [pages, setPages] = useState([]);
     const [columns, setColumns] = useState(state.columns);
 
@@ -101,7 +106,7 @@ const PowerTable = ({mediaSize}) => {
     }
 
     const toggleColumns = value => {
-        let toggled = state.column;
+        let toggled = state.columns;
 
         switch (value) {
             case toggleDataConfig.values.SHOW_ALL:
@@ -121,16 +126,22 @@ const PowerTable = ({mediaSize}) => {
         setColumns(toggled)
     }
 
-    const hasSelectedRows = state.rows.some(row => row.selected)
-    const hasSelectedColumns = state.columns.some(column => column.selected)
-
-    const selectedRowsCount = state.rows.filter(row => row.selected).length
-    const selectedColumnsCount = state.columns.filter(column => column.selected).length
-
     useEffect(() => {
-        setHasColumnQuery(() => state.columns.some(d => d.query !== ''));
         chunkPages();
     }, [pageSize, searchQuery, state.columns])
+
+    useMemo(() => {
+        const count = state.columns.filter(column => column.selected).length;
+        setHasSelectedColumns(count !== 0)
+        setSelectedColumnsCount(count)
+        setHasColumnQuery(state.columns.some(column => column.query !== ''))
+    }, [state.columns])
+
+    useMemo(() => {
+        const count = state.rows.filter(row => row.selected).length
+        setHasSelectedRows(count !== 0)
+        setSelectedRowsCount(count)
+    }, [state.rows])
 
     return (
         <div>

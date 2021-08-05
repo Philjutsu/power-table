@@ -29,7 +29,7 @@ const Table = ({ columns, dispatch, pages, currentPage, searchQuery, hasColumnQu
         columns.map((column) => {
             columnDrag(column, tableID, columns);
         })
-    }, [])
+    }, [columns])
     
     return (
         <div className={classNames(style.table, 'table')} id={tableID}>

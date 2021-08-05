@@ -18,14 +18,5 @@ export const mediaQueryList = {
 }
 
 // WIP
-export const MediaContext = createContext({
-    breakPoint: '',
-    matchMedia: (matches) => {
-        if (matches) {
-            return 'medium'
-        } else {
-           return 'small'
-        }
-    }
-});
+export const MediaContext = createContext();
 
